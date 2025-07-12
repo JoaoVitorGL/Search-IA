@@ -100,7 +100,7 @@ Esta é a função principal que implementa o algoritmo BFS. Ela inicializa a fi
 
 ```python
 def solve_puzzle(initial_board):
-    initial_state = tuple(initial_board)
+    initial_state = initial_board
     goal_state = (0, 1, 2, 3, 4, 5, 6, 7, 8)
 
     if not is_solvable(initial_state):
