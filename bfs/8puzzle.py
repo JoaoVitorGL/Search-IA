@@ -60,7 +60,7 @@ def reconstruct_path(node):
     return path
 
 def solve_puzzle(initial_board):
-    initial_state = tuple(initial_board)
+    initial_state = initial_board
     goal_state = (0, 1, 2, 3, 4, 5, 6, 7, 8)
 
     if not is_solvable(initial_state):
@@ -98,7 +98,7 @@ def print_solution(puzzle_name, initial_board):
     print(f"--- Solving: {puzzle_name} ---")
     
     print("Initial Board:")
-    initial_state_tuple = tuple(initial_board)
+    initial_state_tuple = initial_board
     print_board_state(initial_state_tuple)
     
     solution_path, steps, message = solve_puzzle(initial_board)
@@ -122,16 +122,16 @@ if __name__ == '__main__':
     # --- Puzzles to be tested ---
 
     # 1. First puzzle (unsolvable)
-    puzzle1 = [4, 6, 2, 8, 1, 3, 7, 5, 0]
+    puzzle1 = (4, 6, 2, 8, 1, 3, 7, 5, 0)
 
     # 2. Second puzzle (solvable)
-    puzzle2 = [6, 4, 2, 8, 1, 3, 7, 5, 0]
+    puzzle2 = (6, 4, 2, 8, 1, 3, 7, 5, 0)
 
     # 3. Third puzzle (custom choice)
-    puzzle3 = [1, 2, 3, 0, 4, 5, 6, 7, 8]
+    puzzle3 = (1, 2, 3, 0, 4, 5, 6, 7, 8)
 
     # 4. Fourth puzzle (custom choice - already solved)
-    puzzle4 = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+    puzzle4 = (0, 1, 2, 3, 4, 5, 6, 7, 8)
 
     print_solution("Puzzle 1", puzzle1)
     print_solution("Puzzle 2", puzzle2)
