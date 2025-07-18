@@ -7,8 +7,8 @@ Use breadth-first search with pruning of already evaluated states.
 
 Puzzles to be tested:
 
-puzzle 1 = [4, 6, 2, 8, 1, 3, 7, 5, 0]
-puzzle 2 = [6, 4, 2, 8, 1, 3, 7, 5, 0]
+puzzle 1 = (4, 6, 2, 8, 1, 3, 7, 5, 0)
+puzzle 2 = (6, 4, 2, 8, 1, 3, 7, 5, 0)
 puzzle 3 = Your choice
 puzzle 4 = Your choice
 """

@@ -51,7 +51,7 @@ class EightQueens:
                     stack.append((board, col + 1))
                 continue
 
-            for row in range(7, -1, -1):
+            for row in range(8):
                 if self.is_safe(board, row, col):
                     new_board = list(board)
                     new_board[col] = row
