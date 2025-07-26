@@ -103,8 +103,8 @@ def solve(self):
                     stack.append((board, col + 1)) # Se for seguro, empilha o estado atual, mas avançando para a próxima coluna
                 continue # Se não for seguro, este ramo da busca é abandonado (não faz nada).
 
-            # Geração de sucessores: Itera por todas as linhas da coluna atual (0 a 7)
-            for row in range(8):
+            # Geração de sucessores: Itera por todas as linhas da coluna atual (7 a 0)
+            for row in range(7, -1, -1):
                 if self.is_safe(board, row, col): # Verifica se colocar uma rainha na posição (row, col) é uma jogada segura
                     new_board = list(board) # Se for seguro, cria uma cópia do tabuleiro atual
                     new_board[col] = row # Coloca a rainha na nova posição (row, col)
@@ -119,15 +119,18 @@ def solve(self):
 ## 4. Resultados Obtidos
 
 ```bash
+Starting with an empty board.
+
 Solution found!
- .  .  Q  .  .  .  .  .
- .  .  .  .  .  Q  .  .
- .  .  .  Q  .  .  .  .
- .  Q  .  .  .  .  .  .
- .  .  .  .  .  .  .  Q
- .  .  .  .  Q  .  .  .
- .  .  .  .  .  .  Q  .
  Q  .  .  .  .  .  .  .
+ .  .  .  .  .  .  Q  .
+ .  .  .  .  Q  .  .  .
+ .  .  .  .  .  .  .  Q
+ .  Q  .  .  .  .  .  .
+ .  .  .  Q  .  .  .  .
+ .  .  .  .  .  Q  .  .
+ .  .  Q  .  .  .  .  .
+[0, 4, 7, 5, 2, 6, 1, 3]
 
 Total nodes created/visited: 114
 ------------------------------
@@ -135,16 +138,17 @@ Total nodes created/visited: 114
 Initial board with queens at (row, column): [(3, 0)]
 
 Solution found!
+ .  Q  .  .  .  .  .  .
  .  .  .  .  Q  .  .  .
  .  .  .  .  .  .  Q  .
- .  .  .  Q  .  .  .  .
  Q  .  .  .  .  .  .  .
  .  .  Q  .  .  .  .  .
  .  .  .  .  .  .  .  Q
  .  .  .  .  .  Q  .  .
- .  Q  .  .  .  .  .  .
+ .  .  .  Q  .  .  .  .
+[3, 0, 4, 7, 1, 6, 2, 5]
 
-Total nodes created/visited: 10
+Total nodes created/visited: 28
 ------------------------------
 
 Initial board with queens at (row, column): [(0, 0), (5, 1)]
@@ -158,8 +162,9 @@ Solution found!
  .  Q  .  .  .  .  .  .
  .  .  .  .  Q  .  .  .
  .  .  Q  .  .  .  .  .
+[0, 5, 7, 2, 6, 3, 1, 4]
 
-Total nodes created/visited: 14
+Total nodes created/visited: 33
 ------------------------------
 
 Initial board with queens at (row, column): [(6, 0), (0, 3), (3, 7)]
@@ -173,7 +178,8 @@ Solution found!
  .  .  .  .  Q  .  .  .
  Q  .  .  .  .  .  .  .
  .  .  .  .  .  Q  .  .
+[6, 4, 2, 0, 5, 7, 1, 3]
 
-Total nodes created/visited: 14
+Total nodes created/visited: 44
 ------------------------------
 ```
